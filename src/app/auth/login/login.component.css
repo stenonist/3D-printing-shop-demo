@@ -1,0 +1,25 @@
+.error_message {
+  color: red;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+form{
+  width: 300px;
+  margin: 20px auto;
+  padding: 20px;
+  box-shadow: 0 0 4px gray;
+  border-radius: 20px;
+}
+label{
+  padding: 5px;
+  text-align: center;
+  display: block;
+}
+input{
+  width: 100%;
+}
+button{
+  display: block;
+  margin: 20px auto;
+}

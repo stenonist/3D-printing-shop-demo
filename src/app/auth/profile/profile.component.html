@@ -1,0 +1,35 @@
+<div class="profileCont">
+  <div class="basicInfo" *ngIf="!editing">
+    <h2>{{currUser.name}} {{currUser.surname}}</h2>
+    <p>Username: {{currUser.username}}</p>
+    <p>Email: {{currUser.email}}</p>
+    <p>Adress: {{currUser.address}}</p>
+    <p>Phone: {{currUser.phone}}</p>
+  </div>
+  <div class="tagCont">
+    <div class="tags" *ngIf="tags.length != 0">
+      <div class="tag" *ngFor="let tag of tags">
+        <h4>{{tag}}</h4> <span (click)="removeTag(tag)">x</span>
+      </div>
+    </div>
+    <h2 *ngIf="tags.length == 0">Nema tagova</h2>
+    <form [formGroup]="tagForm" (ngSubmit)="addTag()">
+      <div class="form-group"  style="display: inline;">
+        <mat-form-field class="example-full-width">
+          <input matInput type="text" class="form-control" formControlName="newTag" id="newTag" name="newTag">
+        </mat-form-field>
+      </div>
+      <button type="submit" mat-raised-button name="btnInsert" class="btn btn-primary" [disabled]="tagForm.invalid">Add tag</button>
+    </form>
+    <!-- dodati input za dodavanje tagova -->
+  </div>
+  <div class="cartCont">
+    <div class="item" *ngFor="let item of cartData">
+      <h2>{{item.itemName}}</h2>
+      <p>{{item.category}}</p>
+      <h2>{{item.itemPrice}}$</h2>
+      <p class="remove" (click)="removeFromCart(item.itemId)">X</p>
+    </div>
+  </div>
+</div>
+<!-- Edit forma sa booleanom -->

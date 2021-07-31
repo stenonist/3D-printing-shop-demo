@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="filter">
+    <p>Apply filter</p>
+    <mat-form-field>
+        <input #inp matInput type="text" (keyup)="doFilter($event.target.value)" placeholder="">
+    </mat-form-field>
+    <h3 *ngIf="!currUser" style="font-weight: 300;font-size: 1.2em;">You must be signed in to reserve.</h3>
+    <button style="width: 100%;"mat-raised-button (click)="doFilter(currUser.address)" *ngIf="tags">Filter by Location</button>
+  </div>
+  <div class="filter" *ngIf="tags">
+    <button class="tag" mat-raised-button *ngFor="let tag of tags" (click)="doFilter(tag)">{{tag}}</button>
+  </div>
+  <div class="removeFilter" *ngIf="filt">
+    <button mat-raised-button (click)="doFilter(''); inp.value='' ">Remove filters</button>
+  </div>
+  <div class="content">
+    <mat-paginator class="fullLen" [pageSize]="5" [pageSizeOptions]="[5, 10, 25, 50, 100]"></mat-paginator>
+    <div class="item" *ngFor="let item of observable | async" routerLink="/item/{{item.itemId}}">
+      <img src={{item.imageUrl}} alt="">
+      <h2>{{item.itemName}}</h2>
+      <p>{{item.category}}</p>
+      <h4>{{item.itemPrice}}$</h4>
+    </div>
+  </div>
+</div>
+

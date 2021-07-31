@@ -1,0 +1,45 @@
+<div class="cont">
+  <div class="basicInfo">
+    <img src={{item.imageUrl}} alt="">
+    <div class="rest">
+      <h2 class="name">{{item.itemName}}</h2>
+      <p class="category">{{item.category}}</p>
+      <p>Zemlja porekla: {{item.originCountry}}</p>
+      <h4>Cena: {{item.itemPrice}}$</h4>
+      <p>{{item.info}}</p>
+      <p *ngIf="available">In stock: {{item.stock}}</p>
+      <p>Period dostave: {{item.arrival}} dana</p>
+      <p class="tag" *ngFor="let tag of item.tags">
+        {{tag}}
+      </p>
+      <div *ngIf="available">
+        <button mat-raised-button *ngIf="!inCart" (click)="addToCart()">Add to cart</button>
+        <button mat-raised-button *ngIf="inCart" (click)="removeFromCart()">Remove from cart</button>
+      </div>
+      <p *ngIf="!available" style="color: red;">Nema na stanju</p>
+    </div>
+  </div>
+  <div class="comments">
+    <form class="my-5" [formGroup]="commentForm" (ngSubmit)="addComment()" *ngIf="inCart">
+      <div class="card-body">
+        <div class="form-row d=flex justify-content-center">
+          <div class="form-group w-100">
+            <label for="comment" class="col-form-label">Your Comment</label>
+            <input type="text" class="form-control" id="comment" name="comment" formControlName="comment">
+          </div>
+        </div>
+      </div>
+      <select class="form-select d-block p-1" name="grade" (change)="changeGrade($event)" formControlName="grade">
+        <option *ngFor="let grade of [1,2,3,4,5]" value="{{grade}}">{{grade}}</option>
+     </select>
+      <div class="card-footer text-center border-top-0">
+        <button type="submit" name="btnLogin" class="btn btn-primary" [disabled]="commentForm.invalid" mat-raised-button>Comment</button>
+      </div>
+      <label class="error_message" *ngIf="errorExists"> {{ errorMessage }} </label>
+    </form>
+    <div class="comment" *ngFor="let comment of item.reviews">
+      <h3>Komentar korisnika: {{comment.comment}}</h3>
+      <h3>Ocena: {{comment.grade}}/5</h3>
+    </div>
+  </div>
+</div>

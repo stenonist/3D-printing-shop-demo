@@ -1,0 +1,76 @@
+.container-fluid{
+  min-height: 70vh;
+}
+.filter{
+  width: 350px;
+  margin: auto;
+  padding: 10px;
+}
+.filter p{
+  display: inline;
+  margin: 0 15px;
+  width: 150px;
+}
+.removeFilter{
+  margin: auto;
+  margin-bottom: 20px;
+  width: 150px;
+}
+.removeFilter button{
+  width: 150px;
+}
+.tag {
+  margin: 0 5px;
+}
+
+.content{
+  width: 1320px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(5, 250px);
+  grid-gap: 20px;
+}
+.content .item{
+  position: relative;
+  text-align: center;
+  color: white;
+  height: 250px;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: hsla(4, 90%, 58%, 0.5);
+  transition: 0.5;
+}
+.fullLen{
+  grid-column-start: 1;
+  grid-column-end: 6;
+  background-color: #e2e2e2;
+  border-radius: 5px;
+}
+.content .item:hover{
+  background-color: hsla(4, 90%, 58%, 0.8);
+  cursor: pointer;
+}
+.content .item h2{
+  margin-top: 10px;
+  margin-bottom: 0px;
+  font-size: 1.6em;
+}
+.content .item p{
+  font-size: 1em;
+}
+.content .item h4{
+  width: 80px;
+  position: absolute;
+  bottom: 10px;
+  left: calc(50% - 40px);
+}
+.content .item img{
+  z-index: -1;
+  width: 250px;
+  height: 250px;
+  border-radius: 10px;
+  position: absolute;
+  top:0;
+  left:0;
+}
+

@@ -1,0 +1,11 @@
+.container-fluid{
+  background-color: hsl(4, 60%, 50%);
+  color: white;
+}
+.container{
+  padding: 20px 0;
+}
+ul{
+  list-style: none;
+  padding-left: 0;
+}

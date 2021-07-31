@@ -1,0 +1,26 @@
+mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+  height: 100%;
+}
+
+mat-sidenav {
+  width: 300px;
+}
+
+form {
+  height: 600px;
+  border: 1px #000 solid;
+}
+
+a {
+  color: #c2c2c2;
+  text-decoration: none;
+  transition: 0.5s;
+}
+
+a:hover {
+  color: #282828;
+}
+
+a:active {
+  color: #fff;
+}

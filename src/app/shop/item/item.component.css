@@ -1,0 +1,52 @@
+.cont{
+  width: 1200px;
+  margin: auto;
+}
+.basicInfo{
+  display: grid;
+  grid-template-columns: repeat(2,600px);
+  height: 400px;
+  margin-top: 100px;
+}
+.basicInfo img{
+  margin: auto;
+  border-radius: 20px;
+  transition: 0.5s;
+}
+.basicInfo img:hover{
+  transform: scale(1.4);
+}
+.rest{
+  width: 400px;
+  margin: auto;
+}
+.name{
+  margin: 0;
+}
+.comments{
+  margin: 50px auto ;
+}
+.comments form{
+  width: 600px;
+  background-color: orange;
+  border-radius: 20px;
+  margin: auto;
+}
+.comments form select{
+  margin: auto;
+  margin-bottom: 20px;
+}
+
+.comments form input,select{
+  border: none;
+  box-shadow: 0 0 4px gray;
+}
+
+.comment{
+  text-align: center;
+  padding: 5px;
+  margin: 10px auto;
+  box-shadow: 0 0 4px gray;
+  width: 500px;
+  border-radius: 20px;
+}

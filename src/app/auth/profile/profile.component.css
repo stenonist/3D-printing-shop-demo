@@ -1,0 +1,88 @@
+.profileCont{
+  min-height: 70vh;
+}
+.basicInfo{
+  width: 1200px;
+  margin: auto;
+}
+.basicInfo h2{
+  font-size: 2em;
+  padding: 5px;
+  text-align: center;
+}
+.basicInfo p{
+  font-size: 1.4em;
+  text-align: center;
+}
+
+.tagCont{
+  width: 1200px;
+  margin: auto;
+}
+.form-group{
+  margin: 0 10px;
+}
+
+.tag{
+  width: 100px;
+  display: inline-block;
+  margin: 0 10px;
+  padding: 5px;
+  border-radius: 5px;
+  box-shadow: 0 0 4px gray;
+  position: relative;
+}
+form{
+  margin: auto;
+  width: 300px;
+}
+.tag h4{
+  text-align: center;
+  width: 100%;
+  margin: 0;
+  font-size: 1.4em;
+  line-height: 40px;
+}
+.tag span{
+  font-size: 1.2em;
+  position: absolute;
+  top: 0px;
+  right: 10px;
+  color: red;
+}
+.tag span:hover{
+  cursor: pointer;
+}
+.newTag *{
+  display: inline;
+}
+.cartCont{
+  margin: auto;
+  width: 1220px;
+  display: grid;
+  grid-template-columns: repeat(3,400px);
+  grid-gap: 10px;
+}
+.remove{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  line-height: 30px;
+  top: 10px;
+  right: 15px;
+  color: red;
+  background-color: gray;
+  border-radius: 50%;
+  transition: 0.5s;
+}
+.remove:hover{
+  background-color: #282828;
+  cursor: pointer;
+}
+.cartCont .item{
+  position: relative;
+  text-align: center;
+  padding: 20px;
+  box-shadow: 0 0 4px gray;
+  border-radius: 20px;
+}
